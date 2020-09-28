@@ -93,7 +93,7 @@ def run(chromaticity):
         alpha_y=alpha_y, beta_y=beta_y, epsn_y=epsn_y,
         beta_z=beta_z, epsn_z=epsn_z,  limit_n_rms_x=3.5, limit_n_rms_y=3.5)
 
-    folder = '/home/vadim/PhD/Data/SIS18_instability/'
+    folder = '/home/vgubaid/SIS18/'#'/home/vadim/PhD/Data/SIS18/'
     bunch_monitor = get_bunch_monitor(folder, chromaticity, n_turns)
     n_slices = 250
     slicer = slicing.UniformBinSlicer(n_slices=n_slices, n_sigma_z=4)
@@ -131,14 +131,14 @@ def run(chromaticity):
             m_.track(bunch)
         # kicks[turn] = btf_kick(bunch, phase_vec, 4.2, 261.72)
         bunch_monitor.dump(bunch)
-        if (turn >= n_turn - n_turns_slicemonitor):
+        if (turn >= n_turns - n_turns_slicemonitor):
             slice_monitor.dump(bunch)
         # particle_monitor.dump(bunch)
     # np.save('/home/vgubaidulin/PhD/Data_server/Stability_scans/SIS18_instability/kicks.npy', kicks)
 
 
 if __name__ == '__main__':
-    filename = '/home/vadim/PhD/Data/SIS18_instability/'
+    # filename = #'/home/vadim/PhD/Data/SIS18/'
     chromaticity = np.array((7.0, 6.0, 5.0, 4.0, 3.0, 2.5, 2, 1.5, 1.0, 0.75, 0.5,
                              0.25, 0.01, -0.01, -0.25, -0.5, -0.75, -1.0, -1.5, -2.0, -2.5, -3.0, -4.0, -5.0, -6.0, -7.0))
     # chromaticity = np.array((0.01, 0.5, 1.0, 2.0, 4.0, 6.0))
