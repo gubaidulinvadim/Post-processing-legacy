@@ -159,7 +159,7 @@ class PS(Synchrotron):
             self.app_y          = 0.0000e-9
             self.app_xy         = 0
             self.alpha     = 0.027
-            self.h1, self.h2       = 7, 0
+            self.h1, self.h2       = 7, 0#was 7, 0
             self.V1, self.V2       = 24e3, 0
             self.dphi1, self.dphi2 = 0, 0
             self.p_increment       = 0 * e/c * self.circumference/(self.beta*c)

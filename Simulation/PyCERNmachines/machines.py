@@ -40,8 +40,8 @@ class Synchrotron(Element):
 
         for attr in kwargs.keys():
             if kwargs[attr] is not None:
-                self.prints('Synchrotron init. From kwargs: %s = %s'
-                            % (attr, repr(kwargs[attr])))
+                #self.prints('Synchrotron init. From kwargs: %s = %s'
+                #            % (attr, repr(kwargs[attr])))
                 setattr(self, attr, kwargs[attr])
 
         self.create_transverse_map(self.chromaticity_on,
